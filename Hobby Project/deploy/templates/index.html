@@ -119,12 +119,18 @@
             <option value="2">North East</option>
             <option value="3">North West</option>
         </select><br><br>
+	<span>Salary      </span><input class="form-input" type = "number" name = "" placeholder = "Enter Salary(optional)"><br><br>
           <!-- <input class="form-input" type = "text" name = "Region" placeholder = "Enter Region">  -->
         <button class="btn btn-success">Predict</button>
     </form>
     <div class = "row">
         {% if prediction %}
         <h2 class = "text-warning">Predicted Charge is {{prediction}}</h2>
+	<h2>Amount you get back when needed {{tot}}</h2>
+        <h2>Amount refunded if policy was cancelled within 1 month {{r1}}</h2>
+        <h2>Amount refunded if policy was cancelled within 3 months {{r2}}</h2>
+        <h2>Amount refunded if policy was cancelled within 6 months {{r3}}</h2>
+        <h2>Amount will not be refunded if policy was cancelled after 6 months</h2><br>
         {% endif %}
     </div>
     </div>
