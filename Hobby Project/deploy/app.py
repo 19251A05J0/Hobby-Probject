@@ -28,7 +28,15 @@ def predict():
         lr = pkl.load(open('charge.pkl','rb'))
         prediction = lr.predict(data)[0]
     
-    return render_template('index.html',prediction=prediction)
+    if prediction<15000:
+        tot = prediction + prediction*0.05
+    else:
+        tot = prediction + prediction*0.10
+        r1 = prediction*0.75
+        r2 = prediction*0.5
+        r3 = prediction*0.25
+    
+    return render_template('index.html',prediction=prediction,tot=tot,r1=r1,r2=r2,r3=r3)
 
 if __name__ == '__main__':
     app.run(debug=True)
